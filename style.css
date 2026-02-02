@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Sans MS", cursive;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  background: #fff0f5;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 10;
+}
+
+h1 {
+  color: #d63384;
+}
+
+p {
+  color: #a61e4d;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  position: relative;
+  height: 120px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  position: absolute;
+}
+
+#yesBtn {
+  background: #ff4d6d;
+  color: white;
+  left: 30%;
+}
+
+#noBtn {
+  background: #adb5bd;
+  color: black;
+  position: fixed;   /* important */
+  left: 55%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Floating hearts */
+.hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  bottom: -20px;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+/* Snow effect */
+.snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image:
+        radial-gradient(white 1.5px, transparent 2px),
+        radial-gradient(white 1px, transparent 2px),
+        radial-gradient(white 2px, transparent 3px);
+    background-size: 50px 50px, 70px 70px, 100px 100px;
+    animation: snowFall 10s linear infinite;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+@keyframes snowFall {
+    from {
+        background-position: 0 0, 0 0, 0 0;
+    }
+    to {
+        background-position: 0 100vh, 0 200vh, 0 300vh;
+    }
+}
+
+/* Make sure your container stays on top */
+.container {
+    position: relative;
+    z-index: 2;
+}
